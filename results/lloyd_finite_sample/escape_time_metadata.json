@@ -1,0 +1,40 @@
+{
+  "experiment": "first-passage dynamics from a population balanced-Lloyd saddle",
+  "protocol": {
+    "threshold_fixed_before_followup": 0.4,
+    "threshold_selection_history": "The threshold was informed by an earlier exploratory run and fixed before this follow-up; the study was not preregistered.",
+    "taus": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "sample_sizes": [
+      60,
+      180,
+      540,
+      1620
+    ],
+    "independent_datasets_per_condition": 40,
+    "dataset_bootstrap_replicates": 5000,
+    "seed": 20261105,
+    "assignment": "exact equal-capacity linear assignment using scipy.optimize.linear_sum_assignment",
+    "initialization": "population three-center fixed shape",
+    "stopping": "unchanged exact partition on consecutive assignments; maximum 100 iterations",
+    "event": "absolute normalized (1,-2,1)/sqrt(6) high-mode amplitude first reaches 0.4 strictly before the returned terminal fixed-point state; the repeat-detection assignment call is one index later than that state",
+    "candidate_prediction": "for tau>1/3, first-passage iteration has leading term log(n)/(2*log(3*tau)) if the empirical perturbation remains coherent near the saddle; this is a hypothesis under study",
+    "uncertainty": "Wilson 95% intervals for hit fractions; percentile intervals from 5,000 dataset bootstrap resamples for median hit time conditional on a hit"
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "pandas": "2.3.3"
+  },
+  "runtime_seconds": 596.8561939001083,
+  "outputs": [
+    "results/lloyd_finite_sample/escape_time_by_dataset.csv",
+    "results/lloyd_finite_sample/escape_time_trajectories.csv",
+    "results/lloyd_finite_sample/escape_time_summary.csv"
+  ],
+  "classification_rebuild": "Strict preterminal hits and threshold hits exactly at the returned terminal state were classified from saved dataset-level first-hit and repeat-detection indices; raw trajectories were unchanged."
+}
