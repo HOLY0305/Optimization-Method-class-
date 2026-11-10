@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="183mm" height="83.247463mm" viewBox="0 80 1774 807" version="1.1" role="img" aria-labelledby="figure-desc">
+<desc id="figure-desc">Editable three-panel vector schematic: equal-mass Gaussian bands and centers, tilted interfaces under perturbation, and the path-Laplacian response formula.</desc>
+<defs><style type="text/css">text{font-family:"Times New Roman","STIX Two Text","Georgia",serif;fill:#151719}.math{font-style:italic}</style></defs>
+
+<g id="panel-a-fixed-configuration">
+<text id="panel-a-heading" x="350" y="119" font-size="32" font-weight="700" fill="#151719" text-anchor="middle" dominant-baseline="middle">(a) Gaussian fixed configuration</text>
+<rect id="a-left-equal-mass-band" x="110" y="194" width="187.136" height="472" rx="0" fill="#d9edfb" stroke="none" stroke-width="0"/>
+<rect id="a-middle-equal-mass-band" x="297.136" y="194" width="102.728" height="472" rx="0" fill="#fff0d8" stroke="none" stroke-width="0"/>
+<rect id="a-right-equal-mass-band" x="399.864" y="194" width="187.136" height="472" rx="0" fill="#dff2dc" stroke="none" stroke-width="0"/>
+<line id="a-left-quantile-cut" x1="297.136" y1="194" x2="297.136" y2="666" stroke="#151719" stroke-width="4" stroke-linecap="round" stroke-dasharray="13 11"/>
+<line id="a-right-quantile-cut" x1="399.864" y1="194" x2="399.864" y2="666" stroke="#151719" stroke-width="4" stroke-linecap="round" stroke-dasharray="13 11"/>
+<text id="a-minus-b-label" class="math" x="285.136" y="163" font-size="30" font-weight="600" fill="#151719" text-anchor="end" dominant-baseline="middle">−b</text>
+<text id="a-plus-b-label" class="math" x="411.864" y="163" font-size="30" font-weight="600" fill="#151719" text-anchor="start" dominant-baseline="middle">b</text>
+<line id="a-y-axis" x1="110" y1="194" x2="110" y2="666" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="a-x-axis" x1="110" y1="666" x2="587" y2="666" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="a-x-tick-0" x1="110" y1="666" x2="110" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="a-y-tick-0" x1="100" y1="666" x2="110" y2="666" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="a-x-tick-label-0" x="110" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">-2</text>
+<text id="a-y-tick-label-0" x="89" y="666" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">-2</text>
+<line id="a-x-tick-1" x1="229.25" y1="666" x2="229.25" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="a-y-tick-1" x1="100" y1="548" x2="110" y2="548" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="a-x-tick-label-1" x="229.25" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">-1</text>
+<text id="a-y-tick-label-1" x="89" y="548" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">-1</text>
+<line id="a-x-tick-2" x1="348.5" y1="666" x2="348.5" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="a-y-tick-2" x1="100" y1="430" x2="110" y2="430" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="a-x-tick-label-2" x="348.5" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="a-y-tick-label-2" x="89" y="430" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">0</text>
+<line id="a-x-tick-3" x1="467.75" y1="666" x2="467.75" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="a-y-tick-3" x1="100" y1="312" x2="110" y2="312" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="a-x-tick-label-3" x="467.75" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="a-y-tick-label-3" x="89" y="312" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">1</text>
+<line id="a-x-tick-4" x1="587" y1="666" x2="587" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="a-y-tick-4" x1="100" y1="194" x2="110" y2="194" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="a-x-tick-label-4" x="587" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">2</text>
+<text id="a-y-tick-label-4" x="89" y="194" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">2</text>
+<text id="a-x-label" class="math" x="348.5" y="742" font-size="30" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">x</text>
+<text id="a-y-label" class="math" x="26" y="430" font-size="30" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">y</text>
+<polygon id="a-center-1" points="218.422,414.5 233.922,430 218.422,445.5 202.922,430" fill="#0877c9" stroke="#0877c9" stroke-width="1" stroke-linejoin="round"/>
+<text id="a-center-label-1" class="math" x="218.422" y="475" font-size="28" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">−κ</text>
+<polygon id="a-center-2" points="348.5,414.5 364,430 348.5,445.5 333,430" fill="#f07800" stroke="#f07800" stroke-width="1" stroke-linejoin="round"/>
+<text id="a-center-label-2" x="348.5" y="475" font-size="28" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">0</text>
+<polygon id="a-center-3" points="478.578,414.5 494.078,430 478.578,445.5 463.078,430" fill="#078d2d" stroke="#078d2d" stroke-width="1" stroke-linejoin="round"/>
+<text id="a-center-label-3" class="math" x="478.578" y="475" font-size="28" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">κ</text>
+</g>
+<g id="panel-b-perturbed-configuration">
+<text id="panel-b-heading" x="982" y="119" font-size="32" font-weight="700" fill="#151719" text-anchor="middle" dominant-baseline="middle">(b) Perturbed configuration</text>
+<polygon id="b-left-equal-mass-region" points="735,194 948,194 876,666 735,666" fill="#d9edfb" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="b-middle-equal-mass-region" points="948,194 1018,194 1082,666 876,666" fill="#fff0d8" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="b-right-equal-mass-region" points="1018,194 1228,194 1228,666 1082,666" fill="#dff2dc" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<line id="b-left-tilted-interface" x1="948" y1="194" x2="876" y2="666" stroke="#0877c9" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="13 11"/>
+<line id="b-right-tilted-interface" x1="1018" y1="194" x2="1082" y2="666" stroke="#078d2d" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="13 11"/>
+<line id="b-y-axis" x1="735" y1="194" x2="735" y2="666" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="b-x-axis" x1="735" y1="666" x2="1228" y2="666" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="b-x-tick-0" x1="735" y1="666" x2="735" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="b-y-tick-0" x1="725" y1="666" x2="735" y2="666" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="b-x-tick-label-0" x="735" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">-2</text>
+<text id="b-y-tick-label-0" x="714" y="666" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">-2</text>
+<line id="b-x-tick-1" x1="858.25" y1="666" x2="858.25" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="b-y-tick-1" x1="725" y1="548" x2="735" y2="548" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="b-x-tick-label-1" x="858.25" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">-1</text>
+<text id="b-y-tick-label-1" x="714" y="548" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">-1</text>
+<line id="b-x-tick-2" x1="981.5" y1="666" x2="981.5" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="b-y-tick-2" x1="725" y1="430" x2="735" y2="430" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="b-x-tick-label-2" x="981.5" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="b-y-tick-label-2" x="714" y="430" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">0</text>
+<line id="b-x-tick-3" x1="1104.75" y1="666" x2="1104.75" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="b-y-tick-3" x1="725" y1="312" x2="735" y2="312" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="b-x-tick-label-3" x="1104.75" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="b-y-tick-label-3" x="714" y="312" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">1</text>
+<line id="b-x-tick-4" x1="1228" y1="666" x2="1228" y2="676" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<line id="b-y-tick-4" x1="725" y1="194" x2="735" y2="194" stroke="#151719" stroke-width="2.2" stroke-linecap="round"/>
+<text id="b-x-tick-label-4" x="1228" y="700" font-size="23" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">2</text>
+<text id="b-y-tick-label-4" x="714" y="194" font-size="23" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">2</text>
+<text id="b-x-label" class="math" x="981.5" y="742" font-size="30" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">x</text>
+<text id="b-y-label" class="math" x="651" y="430" font-size="30" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">y</text>
+<polygon id="b-perturbed-center-1" points="847.059,400.5 862.559,416 847.059,431.5 831.559,416" fill="#0877c9" stroke="#0877c9" stroke-width="1" stroke-linejoin="round"/>
+<polygon id="b-perturbed-center-2" points="981.5,414.5 997,430 981.5,445.5 966,430" fill="#f07800" stroke="#f07800" stroke-width="1" stroke-linejoin="round"/>
+<polygon id="b-perturbed-center-3" points="1115.94,400.5 1131.44,416 1115.94,431.5 1100.44,416" fill="#078d2d" stroke="#078d2d" stroke-width="1" stroke-linejoin="round"/>
+</g>
+<g id="panel-c-perturbation-mechanism">
+<text id="panel-c-heading" x="1517" y="119" font-size="32" font-weight="700" fill="#151719" text-anchor="middle" dominant-baseline="middle">(c) Perturbation mechanism</text>
+<line id="c-path-edge-1" x1="1418" y1="263" x2="1472" y2="263" stroke="#151719" stroke-width="4" stroke-linecap="round"/>
+<line id="c-path-edge-2" x1="1572" y1="263" x2="1626" y2="263" stroke="#151719" stroke-width="4" stroke-linecap="round"/>
+<circle id="c-path-node-1" cx="1368" cy="263" r="49.5" fill="#ffffff" stroke="#0877c9" stroke-width="4.3"/>
+<text id="c-path-node-label-1" class="math" x="1368" y="263" font-size="36" font-weight="400" fill="#0877c9" text-anchor="middle" dominant-baseline="middle">q₁</text>
+<circle id="c-path-node-2" cx="1522" cy="263" r="49.5" fill="#ffffff" stroke="#f07800" stroke-width="4.3"/>
+<text id="c-path-node-label-2" class="math" x="1522" y="263" font-size="36" font-weight="400" fill="#f07800" text-anchor="middle" dominant-baseline="middle">q₂</text>
+<circle id="c-path-node-3" cx="1676" cy="263" r="49.5" fill="#ffffff" stroke="#078d2d" stroke-width="4.3"/>
+<text id="c-path-node-label-3" class="math" x="1676" y="263" font-size="36" font-weight="400" fill="#078d2d" text-anchor="middle" dominant-baseline="middle">q₃</text>
+<text id="c-response-formula" class="math" x="1522" y="390" font-size="41" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">δȳ = τ L₃ q</text>
+<text id="c-laplacian-name" class="math" x="1418" y="520" font-size="32" font-weight="400" fill="#151719" text-anchor="end" dominant-baseline="middle">L₃ =</text>
+<text id="c-l3-r1-c1" x="1473" y="465" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="c-l3-r1-c2" x="1574" y="465" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="c-l3-r1-c3" x="1675" y="465" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="c-l3-r2-c1" x="1473" y="518" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="c-l3-r2-c2" x="1574" y="518" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">2</text>
+<text id="c-l3-r2-c3" x="1675" y="518" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="c-l3-r3-c1" x="1473" y="571" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="c-l3-r3-c2" x="1574" y="571" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="c-l3-r3-c3" x="1675" y="571" font-size="34" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">1</text>
+<line id="c-l3-left-bracket-vertical" x1="1439" y1="441" x2="1439" y2="594" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="c-l3-left-bracket-top" x1="1439" y1="441" x2="1453" y2="441" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="c-l3-left-bracket-bottom" x1="1439" y1="594" x2="1453" y2="594" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="c-l3-right-bracket-vertical" x1="1711" y1="441" x2="1711" y2="594" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="c-l3-right-bracket-top" x1="1697" y1="441" x2="1711" y2="441" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<line id="c-l3-right-bracket-bottom" x1="1697" y1="594" x2="1711" y2="594" stroke="#151719" stroke-width="3" stroke-linecap="round"/>
+<text id="c-q-vector" class="math" x="1522" y="659" font-size="32" font-weight="400" fill="#151719" text-anchor="middle" dominant-baseline="middle">q = (q₁, q₂, q₃)ᵀ</text>
+</g>
+<g id="equal-mass-legend">
+<rect id="legend-outline" x="136" y="795" width="1502" height="72" rx="17" fill="#ffffff" stroke="#151719" stroke-width="2"/>
+<rect id="legend-swatch-1" x="194" y="811" width="76" height="38" rx="6" fill="#d9edfb" stroke="#b8d8ee" stroke-width="2"/>
+<text id="legend-label-1" x="300" y="831" font-size="29" font-weight="400" fill="#151719" text-anchor="start" dominant-baseline="middle">Left band (mass 1/3)</text>
+<rect id="legend-swatch-2" x="679" y="811" width="76" height="38" rx="6" fill="#fff0d8" stroke="#f1d6b1" stroke-width="2"/>
+<text id="legend-label-2" x="790" y="831" font-size="29" font-weight="400" fill="#151719" text-anchor="start" dominant-baseline="middle">Middle band (mass 1/3)</text>
+<rect id="legend-swatch-3" x="1188" y="811" width="76" height="38" rx="6" fill="#dff2dc" stroke="#c0e3ba" stroke-width="2"/>
+<text id="legend-label-3" x="1297" y="831" font-size="29" font-weight="400" fill="#151719" text-anchor="start" dominant-baseline="middle">Right band (mass 1/3)</text>
+</g>
+</svg>

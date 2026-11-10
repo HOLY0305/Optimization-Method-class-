@@ -4,6 +4,8 @@
 
 This repository contains the code and saved synthetic results for Section 4 of the course paper **“Optimization Modeling and Local Stability of the Fixed-Capacity Lloyd Algorithm.”** It supports checking the archived dataset-level records and reproducing the paper's two experimental plots without rerunning the 480-dataset simulation.
 
+The complete single-column course-paper PDF and its six figure assets are available in [paper/](paper/): [download the paper](paper/PAPER_LLOYD_COURSE_P10_1.pdf). Figure sources are provided as editable SVG files and 300 dpi PNG files.
+
 ## Environment
 
 - Python 3.13.9 (the recorded run used this version)
@@ -32,7 +34,8 @@ The first command checks all 480 dataset records, the strict-preterminal versus 
 checks/        Validate saved dataset records and summary results
 docs/          Experiment protocol and data dictionary
 experiments/   Lloyd simulation and shared implementation
-figures/       Saved paper figures (PNG and SVG)
+figures/       Section 4 experimental plots (PNG and SVG)
+paper/         Complete single-column paper PDF and its six figure sources
 results/       Dataset, trajectory, summary, and metadata files
 scripts/       Plot the paper figures from the saved summary CSV
 ```
@@ -53,6 +56,6 @@ The parameter grid, stopping and event counters, random seed, confidence interva
 
 ## Scope and limitations
 
-The default workflow verifies and plots the saved outputs. It does not claim an independent rerun of the full simulation or a finite-sample proof of the population local-stability result. The files in this repository are limited to the current course paper's Section 4; older exploratory studies and unrelated high-order research outputs are intentionally excluded.
+The default workflow verifies and plots the saved outputs. It does not claim an independent rerun of the full simulation or a finite-sample proof of the population local-stability result. The paper directory contains the complete single-column course-paper PDF and its six final figure assets. Reproduction code and saved synthetic results cover Section 4; older exploratory studies and unrelated high-order research outputs are intentionally excluded.
 
-Python source code is under the MIT License in [`LICENSE`](LICENSE). Synthetic data, figures and documentation are under [CC BY 4.0](DATA_LICENSE.md).
+Python source code is under the MIT License in [`LICENSE`](LICENSE). The paper PDF, synthetic data, figures and documentation are under [CC BY 4.0](DATA_LICENSE.md).

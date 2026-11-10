@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="183mm" height="87.25mm" viewBox="0 0 1817 866" version="1.1" role="img" aria-labelledby="figure-title figure-desc">
+<title id="figure-title">固定容量聚类与 Lloyd 算法分析图</title>
+<desc id="figure-desc">三栏可编辑示意图，分别说明固定容量聚类建模、Lloyd 交替迭代和理论及有限样本分析。</desc>
+<defs><style type="text/css">.zh{font-family:"Microsoft YaHei","SimSun",sans-serif}.math{font-family:"Times New Roman","STIX Two Text",serif;font-style:italic}</style></defs>
+<rect id="white-canvas" x="0" y="0" width="1817" height="866" fill="#ffffff"/>
+<g id="panel-model">
+<rect id="panel-model-body" x="11" y="8" width="539" height="850" rx="17" fill="#ffffff" stroke="#24292e" stroke-width="1.5"/>
+<rect id="panel-model-header" x="13" y="10" width="535" height="53" rx="15" fill="#e9ecef" stroke="none" stroke-width="0"/>
+<line id="panel-model-header-rule" x1="13" y1="63" x2="548" y2="63" stroke="#c1c5c9" stroke-width="1"/>
+<text id="panel-model-heading" class="zh" x="280.5" y="39" font-size="24" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">（a）建模：固定容量聚类</text>
+<g id="model-spatial-partition">
+<rect id="model-spatial-background" x="65" y="74" width="435" height="263" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<polygon id="model-region-c1" points="65,74 360.8,74 291.2,200.24 65,229.17" fill="#dce9fb" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="model-region-c2" points="360.8,74 500,74 500,337 421.7,337 291.2,200.24" fill="#e5f4df" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="model-region-c3" points="65,229.17 291.2,200.24 421.7,337 65,337" fill="#ffead8" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<circle id="model-x₁-point" cx="169.4" cy="121.34" r="6.5" fill="#1876d2" stroke="#202428" stroke-width="1.3"/>
+<text id="model-x₁-label" class="math" x="167.4" y="99.34" font-size="24" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₁</text>
+<circle id="model-x₂-point" cx="256.4" cy="145.01" r="6.5" fill="#1876d2" stroke="#202428" stroke-width="1.3"/>
+<text id="model-x₂-label" class="math" x="252.4" y="123.01" font-size="24" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₂</text>
+<circle id="model-x₃-point" cx="456.5" cy="166.05" r="6.5" fill="#2b9b45" stroke="#202428" stroke-width="1.3"/>
+<text id="model-x₃-label" class="math" x="453.5" y="146.05" font-size="24" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₃</text>
+<circle id="model-x₄-point" cx="439.1" cy="252.84" r="6.5" fill="#2b9b45" stroke="#202428" stroke-width="1.3"/>
+<text id="model-x₄-label" class="math" x="458.1" y="269.84" font-size="24" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₄</text>
+<circle id="model-x₅-point" cx="165.05" cy="276.51" r="6.5" fill="#ec7600" stroke="#202428" stroke-width="1.3"/>
+<text id="model-x₅-label" class="math" x="165.05" y="251.51" font-size="24" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₅</text>
+<circle id="model-x₆-point" cx="308.6" cy="315.96" r="6.5" fill="#ec7600" stroke="#202428" stroke-width="1.3"/>
+<text id="model-x₆-label" class="math" x="330.6" y="297.96" font-size="24" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₆</text>
+<circle id="model-c₁-center" cx="178.1" cy="163.42" r="10.7" fill="#1876d2" stroke="#202428" stroke-width="1.3"/>
+<text id="model-c₁-label" class="math" x="198.1" y="166.42" font-size="24" font-weight="600" fill="#1876d2" text-anchor="start" dominant-baseline="middle" font-style="italic">c₁</text>
+<circle id="model-c₂-center" cx="395.6" cy="223.91" r="10.7" fill="#2b9b45" stroke="#202428" stroke-width="1.3"/>
+<text id="model-c₂-label" class="math" x="430.6" y="221.91" font-size="24" font-weight="600" fill="#2b9b45" text-anchor="start" dominant-baseline="middle" font-style="italic">c₂</text>
+<circle id="model-c₃-center" cx="256.4" cy="276.51" r="10.7" fill="#ec7600" stroke="#202428" stroke-width="1.3"/>
+<text id="model-c₃-label" class="math" x="256.4" y="301.51" font-size="24" font-weight="600" fill="#ec7600" text-anchor="middle" dominant-baseline="middle" font-style="italic">c₃</text>
+<rect id="model-spatial-frame" x="65" y="74" width="435" height="263" rx="0" fill="none" stroke="#8b9298" stroke-width="1.1"/>
+</g>
+<rect id="model-capacity-square" x="48" y="354" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="model-capacity-label" class="zh" x="73" y="361" font-size="20" font-weight="600" fill="#171b20" text-anchor="start" dominant-baseline="middle">预设容量：  mⱼ</text>
+<rect id="model-assignment-square" x="48" y="394" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="model-assignment-label" class="zh" x="73" y="401" font-size="20" font-weight="600" fill="#171b20" text-anchor="start" dominant-baseline="middle">指派变量：  Z = [zᵢⱼ]</text>
+<rect id="model-constraints-square" x="48" y="434" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="model-constraints-label" class="zh" x="73" y="441" font-size="19" font-weight="600" fill="#171b20" text-anchor="start" dominant-baseline="middle">约束：  ∑ⱼ zᵢⱼ = 1，  ∑ᵢ zᵢⱼ = mⱼ</text>
+<rect id="model-objective-square" x="48" y="477" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="model-objective-label" class="zh" x="73" y="484" font-size="18" font-weight="600" fill="#171b20" text-anchor="start" dominant-baseline="middle">目标：  Q(Z,C) = ∑ᵢ ∑ⱼ zᵢⱼ ‖xᵢ − cⱼ‖²</text>
+<rect id="model-matrix-caption" x="80" y="542" width="171" height="66" rx="18" fill="#dce9fb" stroke="none" stroke-width="0"/>
+<text id="model-matrix-caption-1" class="zh" x="166" y="563" font-size="21" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">指派矩阵 Z</text>
+<text id="model-matrix-caption-2" class="zh" x="166" y="587" font-size="20" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">(6 × 3)</text>
+<line id="matrix-left-top" x1="306" y1="533" x2="296" y2="533" stroke="#171b20" stroke-width="1.8"/>
+<line id="matrix-left-vertical" x1="296" y1="533" x2="296" y2="644" stroke="#171b20" stroke-width="1.8"/>
+<line id="matrix-left-bottom" x1="296" y1="644" x2="306" y2="644" stroke="#171b20" stroke-width="1.8"/>
+<line id="matrix-right-top" x1="360" y1="533" x2="371" y2="533" stroke="#171b20" stroke-width="1.8"/>
+<line id="matrix-right-vertical" x1="371" y1="533" x2="371" y2="644" stroke="#171b20" stroke-width="1.8"/>
+<line id="matrix-right-bottom" x1="371" y1="644" x2="360" y2="644" stroke="#171b20" stroke-width="1.8"/>
+<text id="matrix-r1-c1" class="math" x="317" y="543" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="matrix-r1-c2" class="math" x="337" y="543" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r1-c3" class="math" x="357" y="543" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r2-c1" class="math" x="317" y="561" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="matrix-r2-c2" class="math" x="337" y="561" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r2-c3" class="math" x="357" y="561" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r3-c1" class="math" x="317" y="579" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r3-c2" class="math" x="337" y="579" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="matrix-r3-c3" class="math" x="357" y="579" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r4-c1" class="math" x="317" y="597" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r4-c2" class="math" x="337" y="597" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="matrix-r4-c3" class="math" x="357" y="597" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r5-c1" class="math" x="317" y="615" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r5-c2" class="math" x="337" y="615" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r5-c3" class="math" x="357" y="615" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="matrix-r6-c1" class="math" x="317" y="633" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r6-c2" class="math" x="337" y="633" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="matrix-r6-c3" class="math" x="357" y="633" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<g id="model-assignment-schematic">
+<rect id="assignment-label-bg" x="48" y="716" width="180" height="70" rx="18" fill="#dce9fb" stroke="none" stroke-width="0"/>
+<text id="assignment-label-line1" class="zh" x="138" y="741" font-size="21" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">样本—簇指派</text>
+<text id="assignment-label-line2" class="zh" x="138" y="765" font-size="20" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">（示意）</text>
+<line id="assignment-x1-edge" x1="295" y1="674" x2="414" y2="687" stroke="#1876d2" stroke-width="2"/>
+<circle id="assignment-x1-node" cx="280" cy="674" r="13" fill="#ffffff" stroke="#33383d" stroke-width="1.4"/>
+<text id="assignment-x1-label" class="math" x="280" y="674" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x1</text>
+<line id="assignment-x2-edge" x1="295" y1="705" x2="414" y2="687" stroke="#1876d2" stroke-width="2"/>
+<circle id="assignment-x2-node" cx="280" cy="705" r="13" fill="#ffffff" stroke="#33383d" stroke-width="1.4"/>
+<text id="assignment-x2-label" class="math" x="280" y="705" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x2</text>
+<line id="assignment-x3-edge" x1="295" y1="736" x2="414" y2="755" stroke="#2b9b45" stroke-width="2"/>
+<circle id="assignment-x3-node" cx="280" cy="736" r="13" fill="#ffffff" stroke="#33383d" stroke-width="1.4"/>
+<text id="assignment-x3-label" class="math" x="280" y="736" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x3</text>
+<line id="assignment-x4-edge" x1="295" y1="767" x2="414" y2="755" stroke="#2b9b45" stroke-width="2"/>
+<circle id="assignment-x4-node" cx="280" cy="767" r="13" fill="#ffffff" stroke="#33383d" stroke-width="1.4"/>
+<text id="assignment-x4-label" class="math" x="280" y="767" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x4</text>
+<line id="assignment-x5-edge" x1="295" y1="798" x2="414" y2="823" stroke="#ec7600" stroke-width="2"/>
+<circle id="assignment-x5-node" cx="280" cy="798" r="13" fill="#ffffff" stroke="#33383d" stroke-width="1.4"/>
+<text id="assignment-x5-label" class="math" x="280" y="798" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x5</text>
+<line id="assignment-x6-edge" x1="295" y1="829" x2="414" y2="823" stroke="#ec7600" stroke-width="2"/>
+<circle id="assignment-x6-node" cx="280" cy="829" r="13" fill="#ffffff" stroke="#33383d" stroke-width="1.4"/>
+<text id="assignment-x6-label" class="math" x="280" y="829" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x6</text>
+<circle id="assignment-c₁-node" cx="434" cy="687" r="20" fill="#dce9fb" stroke="#1876d2" stroke-width="1.7"/>
+<text id="assignment-c₁-label" class="math" x="434" y="687" font-size="22" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">c₁</text>
+<circle id="assignment-c₂-node" cx="434" cy="755" r="20" fill="#e5f4df" stroke="#2b9b45" stroke-width="1.7"/>
+<text id="assignment-c₂-label" class="math" x="434" y="755" font-size="22" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">c₂</text>
+<circle id="assignment-c₃-node" cx="434" cy="823" r="20" fill="#ffead8" stroke="#ec7600" stroke-width="1.7"/>
+<text id="assignment-c₃-label" class="math" x="434" y="823" font-size="22" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">c₃</text>
+</g>
+</g>
+<g id="panel-lloyd">
+<rect id="panel-lloyd-body" x="565" y="8" width="640" height="850" rx="17" fill="#ffffff" stroke="#24292e" stroke-width="1.5"/>
+<rect id="panel-lloyd-header" x="567" y="10" width="636" height="53" rx="15" fill="#e9ecef" stroke="none" stroke-width="0"/>
+<line id="panel-lloyd-header-rule" x1="567" y1="63" x2="1203" y2="63" stroke="#c1c5c9" stroke-width="1"/>
+<text id="panel-lloyd-heading" class="zh" x="885" y="39" font-size="24" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">（b）固定容量 Lloyd 的交替迭代机制</text>
+<rect id="iteration-summary" x="627" y="73" width="535" height="42" rx="20" fill="#dce5ff" stroke="none" stroke-width="0"/>
+<text id="iteration-summary-text" class="zh" x="894" y="94" font-size="21" font-weight="600" fill="#171b20" text-anchor="middle" dominant-baseline="middle">一次迭代：  (Zᵗ, Cᵗ)  →  (Zᵗ⁺¹, Cᵗ⁺¹)</text>
+<rect id="assignment-step-header" x="584" y="132" width="602" height="39" rx="18" fill="#dce9fb" stroke="none" stroke-width="0"/>
+<text id="assignment-step-title" class="zh" x="603" y="151" font-size="22" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">①  容量约束指派（固定中心 Cᵗ）</text>
+<text id="assignment-update-formula" class="math" x="884" y="198" font-size="22" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">Zᵗ⁺¹ = arg min_Z Q(Z, Cᵗ)</text>
+<rect id="assignment-constraints-pill" x="718" y="220" width="333" height="46" rx="16" fill="#f1f2f3" stroke="#bcc2c7" stroke-width="1"/>
+<text id="assignment-constraints-text" class="zh" x="884" y="243" font-size="19" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">∑ⱼ zᵢⱼ = 1，  ∑ᵢ zᵢⱼ = mⱼ</text>
+<g id="assignment-before">
+<rect id="assignment-before-frame" x="590" y="288" width="268" height="174" rx="0" fill="#ffffff" stroke="#737b82" stroke-width="1.2"/>
+<polygon id="assignment-before-blue-cell" points="590,288 756.16,288 715.96,366.3 590,390.66" fill="#dce9fb" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="assignment-before-green-cell" points="756.16,288 858,288 858,462 788.32,462 715.96,366.3" fill="#e5f4df" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="assignment-before-orange-cell" points="590,390.66 715.96,366.3 788.32,462 590,462" fill="#ffead8" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<circle id="assignment-before-x₁-point" cx="622.16" cy="321.06" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="assignment-before-x₁-label" class="math" x="618.16" y="306.06" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₁</text>
+<circle id="assignment-before-x₂-point" cx="694.52" cy="319.32" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="assignment-before-x₂-label" class="math" x="694.52" y="304.32" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₂</text>
+<circle id="assignment-before-x₃-point" cx="820.48" cy="331.5" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="assignment-before-x₃-label" class="math" x="820.48" y="317.5" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₃</text>
+<circle id="assignment-before-x₄-point" cx="809.76" cy="423.72" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="assignment-before-x₄-label" class="math" x="821.76" y="439.72" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₄</text>
+<circle id="assignment-before-x₅-point" cx="635.56" cy="415.02" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="assignment-before-x₅-label" class="math" x="615.56" y="429.02" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₅</text>
+<circle id="assignment-before-x₆-point" cx="745.44" cy="437.64" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="assignment-before-x₆-label" class="math" x="755.44" y="425.64" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₆</text>
+<circle id="assignment-before-c₁-center" cx="651.64" cy="348.9" r="8.2" fill="#1876d2" stroke="#ffffff" stroke-width="1.5"/>
+<text id="assignment-before-c₁-label" class="math" x="663.64" y="340.9" font-size="18" font-weight="600" fill="#1876d2" text-anchor="start" dominant-baseline="middle" font-style="italic">c₁</text>
+<circle id="assignment-before-c₂-center" cx="777.6" cy="385.44" r="8.2" fill="#2b9b45" stroke="#ffffff" stroke-width="1.5"/>
+<text id="assignment-before-c₂-label" class="math" x="788.6" y="382.44" font-size="18" font-weight="600" fill="#2b9b45" text-anchor="start" dominant-baseline="middle" font-style="italic">c₂</text>
+<circle id="assignment-before-c₃-center" cx="697.2" cy="427.2" r="8.2" fill="#ec7600" stroke="#ffffff" stroke-width="1.5"/>
+<text id="assignment-before-c₃-label" class="math" x="687.2" y="441.2" font-size="18" font-weight="600" fill="#ec7600" text-anchor="end" dominant-baseline="middle" font-style="italic">c₃</text>
+</g>
+<line id="assignment-arrow-shaft" x1="870" y1="375" x2="888" y2="375" stroke="#555c62" stroke-width="4"/>
+<polygon id="assignment-arrow-head" points="880,363 900,375 880,387" fill="#555c62" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<g id="assignment-after">
+<rect id="assignment-after-frame" x="912" y="288" width="268" height="174" rx="0" fill="#ffffff" stroke="#737b82" stroke-width="1.2"/>
+<polygon id="assignment-after-blue-cell" points="912,288 1078.16,288 1037.96,366.3 912,390.66" fill="#dce9fb" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="assignment-after-green-cell" points="1078.16,288 1180,288 1180,462 1110.32,462 1037.96,366.3" fill="#e5f4df" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="assignment-after-orange-cell" points="912,390.66 1037.96,366.3 1110.32,462 912,462" fill="#ffead8" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<circle id="assignment-after-x₁-point" cx="944.16" cy="321.06" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="assignment-after-x₁-label" class="math" x="940.16" y="306.06" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₁</text>
+<circle id="assignment-after-x₂-point" cx="1016.52" cy="319.32" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="assignment-after-x₂-label" class="math" x="1016.52" y="304.32" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₂</text>
+<circle id="assignment-after-x₃-point" cx="1142.48" cy="331.5" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="assignment-after-x₃-label" class="math" x="1142.48" y="317.5" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₃</text>
+<circle id="assignment-after-x₄-point" cx="1131.76" cy="423.72" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="assignment-after-x₄-label" class="math" x="1143.76" y="439.72" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₄</text>
+<circle id="assignment-after-x₅-point" cx="957.56" cy="415.02" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="assignment-after-x₅-label" class="math" x="937.56" y="429.02" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₅</text>
+<circle id="assignment-after-x₆-point" cx="1067.44" cy="437.64" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="assignment-after-x₆-label" class="math" x="1077.44" y="425.64" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₆</text>
+<circle id="assignment-after-c₁-center" cx="973.64" cy="348.9" r="8.2" fill="#1876d2" stroke="#ffffff" stroke-width="1.5"/>
+<text id="assignment-after-c₁-label" class="math" x="985.64" y="340.9" font-size="18" font-weight="600" fill="#1876d2" text-anchor="start" dominant-baseline="middle" font-style="italic">c₁</text>
+<circle id="assignment-after-c₂-center" cx="1099.6" cy="385.44" r="8.2" fill="#2b9b45" stroke="#ffffff" stroke-width="1.5"/>
+<text id="assignment-after-c₂-label" class="math" x="1110.6" y="382.44" font-size="18" font-weight="600" fill="#2b9b45" text-anchor="start" dominant-baseline="middle" font-style="italic">c₂</text>
+<circle id="assignment-after-c₃-center" cx="1019.2" cy="427.2" r="8.2" fill="#ec7600" stroke="#ffffff" stroke-width="1.5"/>
+<text id="assignment-after-c₃-label" class="math" x="1009.2" y="441.2" font-size="18" font-weight="600" fill="#ec7600" text-anchor="end" dominant-baseline="middle" font-style="italic">c₃</text>
+</g>
+<text id="assignment-before-caption" class="math" x="724" y="480" font-size="21" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">(Zᵗ, Cᵗ)</text>
+<text id="assignment-after-caption" class="math" x="1046" y="480" font-size="21" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">(Zᵗ⁺¹, Cᵗ)</text>
+<rect id="mean-step-header" x="584" y="520" width="602" height="39" rx="18" fill="#dce9fb" stroke="none" stroke-width="0"/>
+<text id="mean-step-title" class="zh" x="603" y="539" font-size="22" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">②  更新聚类中心（固定分组 Zᵗ⁺¹）</text>
+<text id="mean-update-formula" class="math" x="884" y="592" font-size="22" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">cⱼᵗ⁺¹ = (1/mⱼ) ∑ᵢ zᵢⱼᵗ⁺¹ xᵢ</text>
+<g id="means-before">
+<rect id="means-before-frame" x="590" y="640" width="268" height="165" rx="0" fill="#ffffff" stroke="#737b82" stroke-width="1.2"/>
+<polygon id="means-before-blue-cell" points="590,640 756.16,640 715.96,714.25 590,737.35" fill="#dce9fb" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="means-before-green-cell" points="756.16,640 858,640 858,805 788.32,805 715.96,714.25" fill="#e5f4df" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="means-before-orange-cell" points="590,737.35 715.96,714.25 788.32,805 590,805" fill="#ffead8" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<circle id="means-before-x₁-point" cx="622.16" cy="671.35" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="means-before-x₁-label" class="math" x="618.16" y="656.35" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₁</text>
+<circle id="means-before-x₂-point" cx="694.52" cy="669.7" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="means-before-x₂-label" class="math" x="694.52" y="654.7" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₂</text>
+<circle id="means-before-x₃-point" cx="820.48" cy="681.25" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="means-before-x₃-label" class="math" x="820.48" y="667.25" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₃</text>
+<circle id="means-before-x₄-point" cx="809.76" cy="768.7" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="means-before-x₄-label" class="math" x="821.76" y="784.7" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₄</text>
+<circle id="means-before-x₅-point" cx="635.56" cy="760.45" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="means-before-x₅-label" class="math" x="615.56" y="774.45" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₅</text>
+<circle id="means-before-x₆-point" cx="745.44" cy="781.9" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="means-before-x₆-label" class="math" x="755.44" y="769.9" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₆</text>
+<circle id="means-before-c₁-center" cx="651.64" cy="697.75" r="8.2" fill="#1876d2" stroke="#ffffff" stroke-width="1.5"/>
+<text id="means-before-c₁-label" class="math" x="663.64" y="689.75" font-size="18" font-weight="600" fill="#1876d2" text-anchor="start" dominant-baseline="middle" font-style="italic">c₁</text>
+<circle id="means-before-c₂-center" cx="777.6" cy="732.4" r="8.2" fill="#2b9b45" stroke="#ffffff" stroke-width="1.5"/>
+<text id="means-before-c₂-label" class="math" x="788.6" y="729.4" font-size="18" font-weight="600" fill="#2b9b45" text-anchor="start" dominant-baseline="middle" font-style="italic">c₂</text>
+<circle id="means-before-c₃-center" cx="697.2" cy="772" r="8.2" fill="#ec7600" stroke="#ffffff" stroke-width="1.5"/>
+<text id="means-before-c₃-label" class="math" x="687.2" y="786" font-size="18" font-weight="600" fill="#ec7600" text-anchor="end" dominant-baseline="middle" font-style="italic">c₃</text>
+</g>
+<line id="means-arrow-shaft" x1="870" y1="722" x2="888" y2="722" stroke="#555c62" stroke-width="4"/>
+<polygon id="means-arrow-head" points="880,710 900,722 880,734" fill="#555c62" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<g id="means-after">
+<rect id="means-after-frame" x="912" y="640" width="268" height="165" rx="0" fill="#ffffff" stroke="#737b82" stroke-width="1.2"/>
+<polygon id="means-after-blue-cell" points="912,640 1078.16,640 1037.96,714.25 912,737.35" fill="#dce9fb" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="means-after-green-cell" points="1078.16,640 1180,640 1180,805 1110.32,805 1037.96,714.25" fill="#e5f4df" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon id="means-after-orange-cell" points="912,737.35 1037.96,714.25 1110.32,805 912,805" fill="#ffead8" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<circle id="means-after-x₁-point" cx="944.16" cy="671.35" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="means-after-x₁-label" class="math" x="940.16" y="656.35" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₁</text>
+<circle id="means-after-x₂-point" cx="1016.52" cy="669.7" r="5.7" fill="#1876d2" stroke="#202428" stroke-width="1"/>
+<text id="means-after-x₂-label" class="math" x="1016.52" y="654.7" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₂</text>
+<circle id="means-after-x₃-point" cx="1142.48" cy="681.25" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="means-after-x₃-label" class="math" x="1142.48" y="667.25" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₃</text>
+<circle id="means-after-x₄-point" cx="1131.76" cy="768.7" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="means-after-x₄-label" class="math" x="1143.76" y="784.7" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₄</text>
+<circle id="means-after-x₅-point" cx="957.56" cy="760.45" r="5.7" fill="#2b9b45" stroke="#202428" stroke-width="1"/>
+<text id="means-after-x₅-label" class="math" x="937.56" y="774.45" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₅</text>
+<circle id="means-after-x₆-point" cx="1067.44" cy="781.9" r="5.7" fill="#ec7600" stroke="#202428" stroke-width="1"/>
+<text id="means-after-x₆-label" class="math" x="1077.44" y="769.9" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₆</text>
+<polygon id="means-after-c₁-center" points="973.64,687.75 976.285,694.109 983.151,694.66 977.92,699.141 979.518,705.84 973.64,702.25 967.762,705.84 969.36,699.141 964.129,694.66 970.995,694.109" fill="#1876d2" stroke="#ffffff" stroke-width="1" stroke-linejoin="round"/>
+<text id="means-after-c₁-label" class="math" x="985.64" y="689.75" font-size="18" font-weight="600" fill="#1876d2" text-anchor="start" dominant-baseline="middle" font-style="italic">c₁ᵗ⁺¹</text>
+<polygon id="means-after-c₂-center" points="1099.6,722.4 1102.25,728.759 1109.11,729.31 1103.88,733.791 1105.48,740.49 1099.6,736.9 1093.72,740.49 1095.32,733.791 1090.09,729.31 1096.95,728.759" fill="#2b9b45" stroke="#ffffff" stroke-width="1" stroke-linejoin="round"/>
+<text id="means-after-c₂-label" class="math" x="1110.6" y="729.4" font-size="18" font-weight="600" fill="#2b9b45" text-anchor="start" dominant-baseline="middle" font-style="italic">c₂ᵗ⁺¹</text>
+<polygon id="means-after-c₃-center" points="1019.2,762 1021.85,768.359 1028.71,768.91 1023.48,773.391 1025.08,780.09 1019.2,776.5 1013.32,780.09 1014.92,773.391 1009.69,768.91 1016.55,768.359" fill="#ec7600" stroke="#ffffff" stroke-width="1" stroke-linejoin="round"/>
+<text id="means-after-c₃-label" class="math" x="1009.2" y="786" font-size="18" font-weight="600" fill="#ec7600" text-anchor="end" dominant-baseline="middle" font-style="italic">c₃ᵗ⁺¹</text>
+</g>
+<text id="means-before-caption" class="math" x="724" y="823" font-size="21" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">(Zᵗ⁺¹, Cᵗ)</text>
+<text id="means-after-caption" class="math" x="1046" y="823" font-size="21" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">(Zᵗ⁺¹, Cᵗ⁺¹)</text>
+</g>
+<g id="panel-analysis">
+<rect id="panel-analysis-body" x="1218" y="8" width="588" height="850" rx="17" fill="#ffffff" stroke="#24292e" stroke-width="1.5"/>
+<rect id="panel-analysis-header" x="1220" y="10" width="584" height="53" rx="15" fill="#e9ecef" stroke="none" stroke-width="0"/>
+<line id="panel-analysis-header-rule" x1="1220" y1="63" x2="1804" y2="63" stroke="#c1c5c9" stroke-width="1"/>
+<text id="panel-analysis-heading" class="zh" x="1512" y="39" font-size="24" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">（c）分析视角与主要结论</text>
+<rect id="analysis-i-outline" x="1221" y="63" width="582" height="202" rx="12" fill="none" stroke="#a2a7ac" stroke-width="1"/>
+<rect id="analysis-i-header" x="1232" y="72" width="559" height="39" rx="18" fill="#dce8ff" stroke="none" stroke-width="0"/>
+<text id="analysis-i-title" class="zh" x="1248" y="91" font-size="21" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">(i) 有限样本的优化性质（第 2 章）</text>
+<rect id="analysis-monotone-square" x="1253" y="130" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="analysis-monotone-label" class="zh" x="1278" y="137" font-size="19" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">目标函数非增</text>
+<rect id="analysis-monotone-formula-bg" x="1290" y="151" width="320" height="34" rx="14" fill="#f0f2f4" stroke="none" stroke-width="0"/>
+<text id="analysis-monotone-formula" class="zh" x="1450" y="168" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">Q(Zᵗ⁺¹,Cᵗ⁺¹) ≤ Q(Zᵗ,Cᵗ)</text>
+<rect id="analysis-termination-square" x="1253" y="204" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="analysis-termination-label" class="zh" x="1278" y="211" font-size="19" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">有限终止</text>
+<rect id="analysis-termination-bg" x="1290" y="223" width="320" height="31" rx="13" fill="#f0f2f4" stroke="none" stroke-width="0"/>
+<text id="analysis-termination-text" class="zh" x="1450" y="238" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">精确子问题 + 固定并列规则</text>
+<line id="analysis-order-separator" x1="1628" y1="121" x2="1628" y2="251" stroke="#a8adb2" stroke-width="1.4" stroke-dasharray="5 5"/>
+<rect id="objective-level-Qᵗ-box" x="1672" y="113" width="79" height="30" rx="12" fill="#dce9fb" stroke="none" stroke-width="0"/>
+<text id="objective-level-Qᵗ-label" class="math" x="1711" y="128" font-size="20" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">Qᵗ</text>
+<rect id="objective-level-Qᵗ⁺¹-box" x="1672" y="168" width="79" height="30" rx="12" fill="#e5f4df" stroke="none" stroke-width="0"/>
+<text id="objective-level-Qᵗ⁺¹-label" class="math" x="1711" y="183" font-size="20" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">Qᵗ⁺¹</text>
+<rect id="objective-level-Qᵀ-box" x="1672" y="222" width="79" height="30" rx="12" fill="#ffead8" stroke="none" stroke-width="0"/>
+<text id="objective-level-Qᵀ-label" class="math" x="1711" y="237" font-size="20" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">Qᵀ</text>
+<text id="objective-order-1" class="zh" x="1711" y="155" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">&gt;</text>
+<text id="objective-order-2" class="zh" x="1711" y="209" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">&gt;</text>
+<line id="analysis-section-rule-ii" x1="1221" y1="266" x2="1803" y2="266" stroke="#9ca2a7" stroke-width="1"/>
+<rect id="analysis-ii-header" x="1232" y="273" width="559" height="39" rx="18" fill="#dce8ff" stroke="none" stroke-width="0"/>
+<text id="analysis-ii-title" class="zh" x="1247" y="292" font-size="20" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">(ii) Gaussian 总体固定构形的局部稳定性（第 3 章）</text>
+<rect id="gaussian-model-bullet-square" x="1247" y="326" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="gaussian-model-bullet-label" class="zh" x="1272" y="333" font-size="18" font-weight="500" fill="#171b20" text-anchor="start" dominant-baseline="middle">X ~ N(0, diag(1, τ I_(d−1)))</text>
+<rect id="laplacian-bullet-square" x="1588" y="326" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="laplacian-bullet-label" class="zh" x="1613" y="333" font-size="18" font-weight="600" fill="#171b20" text-anchor="start" dominant-baseline="middle">L₃</text>
+<g id="gaussian-equal-mass-density">
+<path id="density-left-third" d="M1248 481 C1280 480 1316 461 1342 433 C1353 419 1361 406 1368 394 L1368 481 Z" fill="#e2edfc"/>
+<path id="density-middle-third" d="M1368 394 C1378 376 1388 369 1397 369 C1407 369 1418 378 1427 394 L1427 481 Z" fill="#fff0de"/>
+<path id="density-right-third" d="M1427 394 C1438 416 1452 438 1473 455 C1496 473 1521 480 1545 481 L1427 481 Z" fill="#e5f2df"/>
+<path id="gaussian-density-curve" d="M1248 481 C1280 480 1316 461 1342 433 C1360 410 1370 369 1397 369 C1424 369 1434 410 1452 433 C1478 461 1514 480 1545 481" fill="none" stroke="#1268d4" stroke-width="2.2"/>
+<line id="gaussian-left-cut" x1="1368" y1="394" x2="1368" y2="484" stroke="#30363b" stroke-width="1.6" stroke-dasharray="6 5"/>
+<line id="gaussian-right-cut" x1="1427" y1="394" x2="1427" y2="484" stroke="#30363b" stroke-width="1.6" stroke-dasharray="6 5"/>
+<line id="gaussian-baseline" x1="1248" y1="484" x2="1545" y2="484" stroke="#171b20" stroke-width="1.5"/>
+<polygon id="gaussian-axis-arrow" points="1545,479 1557,484 1545,489" fill="#171b20" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<text id="mass-left-third" class="zh" x="1340" y="459" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1/3</text>
+<text id="mass-middle-third" class="zh" x="1397" y="459" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1/3</text>
+<text id="mass-right-third" class="zh" x="1455" y="459" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1/3</text>
+<text id="cutpoint-left" class="math" x="1348" y="508" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₁ = −b</text>
+<text id="cutpoint-right" class="math" x="1447" y="508" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">x₁ = b</text>
+<text id="density-axis-label" class="math" x="1548" y="504" font-size="18" font-weight="400" fill="#171b20" text-anchor="end" dominant-baseline="middle" font-style="italic">x₁</text>
+</g>
+<g id="path-laplacian-L3">
+<line id="path-edge-1" x1="1643" y1="366" x2="1685" y2="366" stroke="#374047" stroke-width="2.1"/>
+<line id="path-edge-2" x1="1707" y1="366" x2="1749" y2="366" stroke="#374047" stroke-width="2.1"/>
+<circle id="path-node-1" cx="1632" cy="366" r="10" fill="#dce9fb" stroke="#293138" stroke-width="1.5"/>
+<text id="path-node-label-1" class="zh" x="1632" y="393" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<circle id="path-node-2" cx="1696" cy="366" r="10" fill="#f4f4f4" stroke="#293138" stroke-width="1.5"/>
+<text id="path-node-label-2" class="zh" x="1696" y="393" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">2</text>
+<circle id="path-node-3" cx="1760" cy="366" r="10" fill="#e5f4df" stroke="#293138" stroke-width="1.5"/>
+<text id="path-node-label-3" class="zh" x="1760" y="393" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">3</text>
+<text id="laplacian-matrix-title" class="math" x="1590" y="425" font-size="19" font-weight="400" fill="#171b20" text-anchor="start" dominant-baseline="middle" font-style="italic">L₃ =</text>
+<line id="laplacian-bracket-left-top" x1="1684" y1="405" x2="1693" y2="405" stroke="#171b20" stroke-width="1.5"/>
+<line id="laplacian-bracket-left-vertical" x1="1684" y1="405" x2="1684" y2="478" stroke="#171b20" stroke-width="1.5"/>
+<line id="laplacian-bracket-left-bottom" x1="1684" y1="478" x2="1693" y2="478" stroke="#171b20" stroke-width="1.5"/>
+<line id="laplacian-bracket-right-top" x1="1784" y1="405" x2="1775" y2="405" stroke="#171b20" stroke-width="1.5"/>
+<line id="laplacian-bracket-right-vertical" x1="1784" y1="405" x2="1784" y2="478" stroke="#171b20" stroke-width="1.5"/>
+<line id="laplacian-bracket-right-bottom" x1="1784" y1="478" x2="1775" y2="478" stroke="#171b20" stroke-width="1.5"/>
+<text id="laplacian-r1-c1" class="math" x="1701" y="415" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<text id="laplacian-r1-c2" class="math" x="1736" y="415" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="laplacian-r1-c3" class="math" x="1771" y="415" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="laplacian-r2-c1" class="math" x="1701" y="441" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="laplacian-r2-c2" class="math" x="1736" y="441" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">2</text>
+<text id="laplacian-r2-c3" class="math" x="1771" y="441" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="laplacian-r3-c1" class="math" x="1701" y="467" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">0</text>
+<text id="laplacian-r3-c2" class="math" x="1736" y="467" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">−1</text>
+<text id="laplacian-r3-c3" class="math" x="1771" y="467" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">1</text>
+<rect id="local-spectrum-pill" x="1585" y="484" width="204" height="37" rx="17" fill="#ffead8" stroke="none" stroke-width="0"/>
+<text id="local-spectrum-text" class="zh" x="1687" y="503" font-size="18" font-weight="600" fill="#171b20" text-anchor="middle" dominant-baseline="middle">局部谱：{0, τ, 3τ}</text>
+</g>
+<rect id="stability-threshold-label-square" x="1247" y="553" width="12" height="12" rx="0" fill="#1876d2" stroke="none" stroke-width="0"/>
+<text id="stability-threshold-label-label" class="zh" x="1272" y="560" font-size="19" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">τ = 1/3 的阈值</text>
+<rect id="stability-state-1" x="1409" y="539" width="112" height="63" rx="15" fill="#dce9fb" stroke="none" stroke-width="0"/>
+<text id="stability-state-1-condition" class="math" x="1465" y="555" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">τ &lt; 1/3</text>
+<text id="stability-state-1-label" class="zh" x="1465" y="582" font-size="20" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">收缩</text>
+<rect id="stability-state-2" x="1531" y="539" width="112" height="63" rx="15" fill="#e5f4df" stroke="none" stroke-width="0"/>
+<text id="stability-state-2-condition" class="math" x="1587" y="555" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">τ = 1/3</text>
+<text id="stability-state-2-label" class="zh" x="1587" y="582" font-size="20" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">中性</text>
+<rect id="stability-state-3" x="1653" y="539" width="112" height="63" rx="15" fill="#ffead8" stroke="none" stroke-width="0"/>
+<text id="stability-state-3-condition" class="math" x="1709" y="555" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle" font-style="italic">τ &gt; 1/3</text>
+<text id="stability-state-3-label" class="zh" x="1709" y="582" font-size="20" font-weight="700" fill="#171b20" text-anchor="middle" dominant-baseline="middle">扩张</text>
+<line id="analysis-section-rule-iii" x1="1221" y1="616" x2="1803" y2="616" stroke="#9ca2a7" stroke-width="1"/>
+<rect id="analysis-iii-header" x="1232" y="624" width="559" height="39" rx="18" fill="#dce8ff" stroke="none" stroke-width="0"/>
+<text id="analysis-iii-title" class="zh" x="1247" y="643" font-size="21" font-weight="700" fill="#171b20" text-anchor="start" dominant-baseline="middle">(iii) 有限样本数值观察（第 4 章）</text>
+<circle id="tau-icon-ring" cx="1261" cy="703" r="16" fill="#ffffff" stroke="#30383e" stroke-width="2"/>
+<circle id="tau-icon-hub" cx="1261" cy="703" r="5" fill="#ffffff" stroke="#30383e" stroke-width="1.8"/>
+<line id="tau-icon-spoke-1" x1="1261" y1="688.12" x2="1261" y2="679" stroke="#30383e" stroke-width="2.1"/>
+<line id="tau-icon-spoke-2" x1="1271.54" y1="692.46" x2="1278" y2="686" stroke="#30383e" stroke-width="2.1"/>
+<line id="tau-icon-spoke-3" x1="1275.88" y1="703" x2="1285" y2="703" stroke="#30383e" stroke-width="2.1"/>
+<line id="tau-icon-spoke-4" x1="1271.54" y1="713.54" x2="1278" y2="720" stroke="#30383e" stroke-width="2.1"/>
+<line id="tau-icon-spoke-5" x1="1261" y1="717.88" x2="1261" y2="727" stroke="#30383e" stroke-width="2.1"/>
+<line id="tau-icon-spoke-6" x1="1250.46" y1="713.54" x2="1244" y2="720" stroke="#30383e" stroke-width="2.1"/>
+<line id="tau-icon-spoke-7" x1="1246.12" y1="703" x2="1237" y2="703" stroke="#30383e" stroke-width="2.1"/>
+<line id="tau-icon-spoke-8" x1="1250.46" y1="692.46" x2="1244" y2="686" stroke="#30383e" stroke-width="2.1"/>
+<text id="tau-set-top" class="math" x="1310" y="695" font-size="20" font-weight="400" fill="#171b20" text-anchor="start" dominant-baseline="middle" font-style="italic">τ ∈</text>
+<text id="tau-set-values" class="zh" x="1310" y="721" font-size="18" font-weight="400" fill="#171b20" text-anchor="start" dominant-baseline="middle">{0.2, 0.5, 0.8}</text>
+<line id="study-divider-1" x1="1425" y1="680" x2="1425" y2="752" stroke="#8d949a" stroke-width="1.2"/>
+<ellipse id="database-top" cx="1453" cy="690" rx="13" ry="6" fill="#ffffff" stroke="#30383e" stroke-width="1.8"/>
+<line id="database-left" x1="1440" y1="690" x2="1440" y2="719" stroke="#30383e" stroke-width="1.8"/>
+<line id="database-right" x1="1466" y1="690" x2="1466" y2="719" stroke="#30383e" stroke-width="1.8"/>
+<path id="database-bottom" d="M1440 719 C1440 727 1466 727 1466 719" fill="none" stroke="#30383e" stroke-width="1.8"/>
+<path id="database-middle" d="M1440 705 C1440 713 1466 713 1466 705" fill="none" stroke="#30383e" stroke-width="1.4"/>
+<text id="sample-size-set-top" class="math" x="1480" y="684" font-size="20" font-weight="400" fill="#171b20" text-anchor="start" dominant-baseline="middle" font-style="italic">n ∈</text>
+<text id="sample-size-set-row1" class="zh" x="1490" y="712" font-size="18" font-weight="400" fill="#171b20" text-anchor="start" dominant-baseline="middle">{60, 180, 540,</text>
+<text id="sample-size-set-row2" class="zh" x="1490" y="740" font-size="18" font-weight="400" fill="#171b20" text-anchor="start" dominant-baseline="middle">1620}</text>
+<line id="study-divider-2" x1="1630" y1="680" x2="1630" y2="752" stroke="#8d949a" stroke-width="1.2"/>
+<rect id="study-bar-1" x="1657" y="705" width="12" height="19" rx="0" fill="#ffffff" stroke="#30383e" stroke-width="1.7"/>
+<rect id="study-bar-2" x="1675" y="696" width="12" height="28" rx="0" fill="#ffffff" stroke="#30383e" stroke-width="1.7"/>
+<rect id="study-bar-3" x="1693" y="685" width="12" height="39" rx="0" fill="#ffffff" stroke="#30383e" stroke-width="1.7"/>
+<line id="study-bars-baseline" x1="1652" y1="725" x2="1710" y2="725" stroke="#30383e" stroke-width="1.6"/>
+<text id="replicate-count-top" class="zh" x="1752" y="695" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">40组 /</text>
+<text id="replicate-count-bottom" class="zh" x="1752" y="721" font-size="18" font-weight="400" fill="#171b20" text-anchor="middle" dominant-baseline="middle">参数</text>
+<rect id="study-summary-pill" x="1246" y="769" width="547" height="59" rx="17" fill="#ffead8" stroke="none" stroke-width="0"/>
+<rect id="summary-bar-1" x="1277" y="792" width="10" height="17" rx="0" fill="#ffffff" stroke="#30383e" stroke-width="1.4"/>
+<rect id="summary-bar-2" x="1292" y="785" width="10" height="24" rx="0" fill="#ffffff" stroke="#30383e" stroke-width="1.4"/>
+<rect id="summary-bar-3" x="1307" y="777" width="10" height="32" rx="0" fill="#ffffff" stroke="#30383e" stroke-width="1.4"/>
+<line id="summary-bars-baseline" x1="1273" y1="810" x2="1322" y2="810" stroke="#30383e" stroke-width="1.4"/>
+<text id="study-summary-text" class="zh" x="1559" y="799" font-size="18" font-weight="600" fill="#171b20" text-anchor="middle" dominant-baseline="middle">统计：阈值命中比例；首次命中迭代中位数</text>
+</g>
+</svg>
