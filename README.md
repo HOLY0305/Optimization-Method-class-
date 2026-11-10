@@ -1,5 +1,7 @@
 # Fixed-Capacity Lloyd Course Reproduction
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 This repository contains the code and saved synthetic results for Section 4 of the course paper **“Optimization Modeling and Local Stability of the Fixed-Capacity Lloyd Algorithm.”** It supports checking the archived dataset-level records and reproducing the paper's two experimental plots without rerunning the 480-dataset simulation.
 
 ## Environment
@@ -23,6 +25,17 @@ python scripts/plot_paper_figures.py
 ```
 
 The first command checks all 480 dataset records, the strict-preterminal versus terminal-only event boundary, and the stored 12-group summary. It does not rerun Lloyd or recalculate confidence intervals. The second reads `escape_time_summary.csv` and writes `fig03_empirical_hit_fraction` and `fig04_conditional_hit_iterations` as PNG and SVG under `figures/lloyd_finite_sample/`.
+
+## Repository layout
+
+```text
+checks/        Validate saved dataset records and summary results
+docs/          Experiment protocol and data dictionary
+experiments/   Lloyd simulation and shared implementation
+figures/       Saved paper figures (PNG and SVG)
+results/       Dataset, trajectory, summary, and metadata files
+scripts/       Plot the paper figures from the saved summary CSV
+```
 
 ## Optional full simulation
 
